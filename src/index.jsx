@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom';
+import { StateProvider } from "./context/StateProvider";
 ReactDOM.render(
+ <StateProvider>
+      <Router>
+ 
+         <App/>
 
- <Router>
-    <App/>
- </Router>
-,
+       </Router>
+
+ </StateProvider>,
 
 document.getElementById('root'))
