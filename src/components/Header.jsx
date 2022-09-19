@@ -119,7 +119,7 @@ const Header = () => {
                   <p
                   onClick={logout} 
                   className='px-6 py-2 m-2 rounded-md shadow-sm flex items-center justify-center gap-3 cursor-pointer  bg-slate-200 hover:bg-slate-300 transition-all duration-200 ease-in-out text-textColor text-base' >
-                    Logout <MdLogout/>
+                    Logout p  <MdLogout/>
                   </p>
               </div>
             </div>
