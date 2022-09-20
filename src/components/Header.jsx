@@ -91,19 +91,20 @@ const Header = () => {
                   <img src={Logo} className="w-8 object-cover" alt="logo"/>
                   <p className='text-headingColor text-xl font-bold'>City</p>
             </Link>
+                  
+            <div className= ' relative flex items-center justify-center'>
+                 <MdShoppingBasket className='text-textColor text-2xl '/>
+                 <div className=' absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center'>
+                    <p className='text-xs text-white font-semibold'>2</p>
+                 </div>
+            </div>
             <div className='relative' > 
                <motion.img
                      whileTap={{scale:0.6}}
                      src={user ? user.photoURL : Avatar} className='min-w-[40px] min-h-[40px] w-10 h-10 cursor-pointer rounded-full ' 
                      onClick={login}
              />
-             
-             <div className= ' relative flex items-center justify-center'>
-                 <MdShoppingBasket className='text-textColor text-2xl '/>
-                 <div className=' absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center'>
-                    <p className='text-xs text-white font-semibold'>2</p>
-                 </div>
-            </div>
+       
                 <div className={` overflow-hidden  w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-4 transition-all duration-500 ${isMenu ? 'scale-100':'scale-0'}`} >
                 {
                   user && user.email === "aungkyawkhaing2000@gmail.com" && (
