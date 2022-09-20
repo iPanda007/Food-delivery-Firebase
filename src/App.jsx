@@ -8,7 +8,7 @@ const App = () => {
     <AnimatePresence>
     <div className='w-screen h-auto     flex-col bg-primary'>
         <Header/>
-        <main className='mt-24 p-8 w-full'>
+        <main className='mt-24 px-10 p-5 w-full'>
             <RouteRoot/>
         </main>
     </div>
