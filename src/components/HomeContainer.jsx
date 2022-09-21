@@ -1,7 +1,14 @@
 import React from 'react'
 import Delivery from '../img/delivery.png';
 import HeroBg from '../img/heroBg.png';
-import I1 from '../img/i1.png'
+import I1 from '../img/i1.png';
+
+
+const heropData = [
+    {id:1,name:'Icecream',decp:'chocolate & vanilla',price:'5.25',imageSrc:''}
+]
+
+
 const HomeContainer = () => {
   return (
     <section className='grid grid-cols-1 md:grid-cols-2 gap-3 w-full place-content-center  ' id='home'>
@@ -45,8 +52,8 @@ const HomeContainer = () => {
             </div>
             <div className="w-full h-full absolute -top-32 left-0 flex items-center justify-center">
                     <div className="w-190 p-4 flex items-center justify-center flex-col rounded-3xl bg-cardOverlay backdrop-blur-md ">
-                            <img src={I1} className="w-40 -mt-16" alt='I1'/>
-                            <p className='text-base font-semibold text-textColor'>Icecream</p>
+                            <img src={I1} className="w-40 -mt-20" alt='I1'/>
+                            <p className='text-xl font-semibold text-textColor mt-2'>Icecream</p>
                             <p className='text-sm text-lighttextGray font-semibold my-2'>Chocloate & vanialla </p>
                             <p className="text-sm font-semibold text-headingColor"> <span className='text-xs text-red-600'>$</span>5.25</p>
                     </div>
