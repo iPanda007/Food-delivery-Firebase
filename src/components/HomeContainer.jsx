@@ -2,16 +2,14 @@ import React from 'react'
 import Delivery from '../img/delivery.png';
 import HeroBg from '../img/heroBg.png';
 import I1 from '../img/i1.png';
+import { heroData } from '../utils/Data';
 
 
-const heropData = [
-    {id:1,name:'Icecream',decp:'chocolate & vanilla',price:'5.25',imageSrc:''}
-]
 
 
 const HomeContainer = () => {
   return (
-    <section className='grid grid-cols-1 md:grid-cols-2 gap-3 w-full place-content-center  ' id='home'>
+    <sect ion className='grid grid-cols-1 md:grid-cols-2 gap-3 w-full place-content-center  ' id='home'>
     <div className='py-2 flex flex-col items-start justify-between '>
        <div className='flex items-center mb-5  gap-2 justify-center bg-orange-100 p-2 rounded-full
          px-4 py-1 '>
@@ -43,23 +41,27 @@ const HomeContainer = () => {
            Order Now
          </button>
     </div>
-    <div className='py-2 relative flex items-center'>
+    <div className='py-2 relative flex items-center mt-12 md:mt-0'>
             <div className='w-full flex items-center'>
                     <img src={HeroBg}
                      className=' h-420 w-full lg:w-auto lg:h-650 ml-auto' 
                      alt='hero-bg'
                      />
             </div>
-            <div className="w-full h-full absolute -top-32 left-0 flex items-center justify-center">
-                    <div className="w-190 p-4 flex items-center justify-center flex-col rounded-3xl bg-cardOverlay backdrop-blur-md ">
-                            <img src={I1} className="w-40 -mt-20" alt='I1'/>
-                            <p className='text-xl font-semibold text-textColor mt-2'>Icecream</p>
-                            <p className='text-sm text-lighttextGray font-semibold my-2'>Chocloate & vanialla </p>
-                            <p className="text-sm font-semibold text-headingColor"> <span className='text-xs text-red-600'>$</span>5.25</p>
-                    </div>
+            <div className="w-full  h-full absolute top-0 left-0 2xl:left-[20%] flex items-center justify-center flex-wrap gap-4 mt-10 md:mt-0  ">
+                  { heroData && heroData.map(n =>(
+                  <div key={n.id} className=" w-[150px]   mb-12 md:mb-0 lg:min-w-[250px] 2xl:w-[350px]  p-4 shadow flex items-center justify-center flex-col rounded-3xl bg-cardOverlay backdrop-blur-md ">
+                       <img src={n.imageSrc} className=" w-22 md:w-22 lg:w-40 2xl:w-56 -mt-20" alt='I1'/>
+                       <p className='text-lg 2xl:text-2xl font-semibold text-textColor mt-2'>{n.name}</p>
+                       <p className='text-[10px] 2xl:text-base text-lighttextGray font-semibold my-2'>{n.decp} </p>
+                       <p className="text-sm font-semibold text-headingColor"> <span className='text-xs text-red-600'>$</span>{n.price}</p>
+               </div>
+                  ))
+                    
+                   }
             </div>
     </div>
-</section>
+</sect>
   )
 }
 
