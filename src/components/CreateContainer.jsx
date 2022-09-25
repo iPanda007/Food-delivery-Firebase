@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
-import {MdFastfood} from 'react-icons/md'
+import {MdFastfood,MdCloudUpload} from 'react-icons/md'
 import { categories } from '../utils/Data';
+import Loader from './Loader';
 const CreateContainer = () => {
    const [title,setTitle] = useState("");
    const [calories,setCalories] = useState("");
@@ -51,6 +52,32 @@ const CreateContainer = () => {
                         </option>
                       ))}
                   </select>
+            </div>
+            <div className='group flex justify-center items-center flex-col border-2 borderdotter border-gray-300 w-full h-225 md:h-420 cursor-pointer rounded-lg'>
+                        {
+                          isLoading ? <Loader/> : <>
+                                {
+                                  !imageAsset ? <>
+                                         <label
+                                          className='w-full h-full flex flex-col items-center justify-center cursor-pointer'
+                                         >
+                                            <div
+                                             className='w-full h-full flex flex-col items-center justify-center gap-2'
+                                            >
+                                                <MdCloudUpload
+                                                 className="text-4xl text-gray-500 
+                                                  hover:text-gray-700
+                                                 "
+                                                />
+                                                <p className="text-gray-500 text-3xl hover:text-gray-700">Click here to upload</p>
+                                            </div>
+                                         </label>
+                                        </>
+                                    
+                                    : <></>
+                                }
+                          </>
+                        }
             </div>
         </div>
     </div>
