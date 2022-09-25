@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
-
+import {MdFastfood} from 'react-icons/md'
 const CreateContainer = () => {
    const [title,setTitle] = useState("");
    const [calories,setCalories] = useState("");
    const [price,setPrice] = useState("");
    const [category,setCategorty] = useState(null);
-   const [fields,setFields] = useState(true);
+   const [fields,setFields] = useState(false);
    const [msg,setMsg] = useState(null);
    const [imageAsset,setImageAsset] = useState(null);
    const [isLoading,setIsLoading] = useState(false);
@@ -23,6 +23,25 @@ const CreateContainer = () => {
                  {msg}
               </p>
             )}
+            <div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
+               <MdFastfood className="text-xl text-gray-700"/>
+               <input
+                type="text" 
+                required 
+                value={title}
+                onChange={(e)=> setTitle(e.target.value)}
+                placeholder = 'Give me a title...'
+               className="w-full h-full text-lg bg-transparent font-semibold focus:outline-none border-none placeholder:text-gray-500
+               text-textColor"
+               />
+            </div>
+            <div className='w-full'>
+                  <select onChange={()=>}>
+                      <option value="other" className="bg-white">
+                           Select Category
+                      </option>
+                  </select>
+            </div>
         </div>
     </div>
   )
