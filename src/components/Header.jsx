@@ -12,7 +12,7 @@ const Header = () => {
     const [isMenu,setMenu] = useState(false);
     const {initialState,dispatchReducer} = useStateValue();
     const {user} = initialState
-    
+   console.log(user)
     const firebaseAuth = getAuth(app)
     const provider = new GoogleAuthProvider();
 
